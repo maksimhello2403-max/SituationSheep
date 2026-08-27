@@ -1,0 +1,489 @@
+<title>SituationSheep Privacy &amp; Terms</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+:root{
+  --paper:#F8F7F9;
+  --surface:#FFFFFF;
+  --ink:#1A171E;
+  --muted:#6B6470;
+  --rule:#E2DEE6;
+  --accent:#7C3A54;
+  --accent-soft:#F3E7EC;
+  --fill-bg:#FFF3C4;
+  --fill-ink:#5C4708;
+  --shadow:0 1px 2px rgba(26,23,30,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#141218;
+    --surface:#1C1922;
+    --ink:#E8E4EA;
+    --muted:#9A93A2;
+    --rule:#2E2934;
+    --accent:#E9A0B6;
+    --accent-soft:#2A1E25;
+    --fill-bg:#4A3A08;
+    --fill-ink:#FFE9A3;
+    --shadow:0 1px 2px rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#141218;
+  --surface:#1C1922;
+  --ink:#E8E4EA;
+  --muted:#9A93A2;
+  --rule:#2E2934;
+  --accent:#E9A0B6;
+  --accent-soft:#2A1E25;
+  --fill-bg:#4A3A08;
+  --fill-ink:#FFE9A3;
+  --shadow:0 1px 2px rgba(0,0,0,.4);
+}
+
+*{box-sizing:border-box}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ---------- top bar ---------- */
+.bar{
+  position:sticky; top:0; z-index:10;
+  background:color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--rule);
+}
+.bar-in{
+  max-width:1080px; margin:0 auto; padding:.7rem 1.5rem;
+  display:flex; align-items:baseline; gap:1.5rem; flex-wrap:wrap;
+}
+.wordmark{
+  font-family:"Newsreader",Georgia,serif;
+  font-size:1.05rem; font-weight:600; letter-spacing:-.01em;
+  margin-right:auto;
+}
+.wordmark span{color:var(--accent)}
+.bar nav{display:flex; gap:1.25rem; flex-wrap:wrap}
+.bar nav a{
+  font-family:"IBM Plex Mono",monospace;
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.09em;
+  color:var(--muted); text-decoration:none;
+  padding-bottom:2px; border-bottom:1.5px solid transparent;
+}
+.bar nav a:hover{color:var(--ink); border-bottom-color:var(--accent)}
+
+/* ---------- layout ---------- */
+.wrap{max-width:1080px; margin:0 auto; padding:0 1.5rem 6rem}
+.cols{display:grid; grid-template-columns:1fr; gap:3rem}
+@media (min-width:1000px){
+  .cols{grid-template-columns:200px minmax(0,68ch); gap:4rem; justify-content:center}
+  .toc{position:sticky; top:5rem; align-self:start}
+}
+.toc{font-family:"IBM Plex Mono",monospace; font-size:.73rem; line-height:1.9}
+.toc p{
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted);
+  margin:0 0 .6rem; font-size:.68rem;
+}
+.toc a{display:block; color:var(--muted); text-decoration:none}
+.toc a:hover{color:var(--accent)}
+@media (max-width:999px){.toc{display:none}}
+
+/* ---------- masthead ---------- */
+.masthead{padding:4rem 0 2.5rem; border-bottom:1px solid var(--rule)}
+.eyebrow{
+  font-family:"IBM Plex Mono",monospace; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.12em; color:var(--accent);
+  margin:0 0 1rem;
+}
+h1{
+  font-family:"Newsreader",Georgia,serif;
+  font-size:clamp(2.4rem,6vw,3.4rem); font-weight:400; line-height:1.08;
+  letter-spacing:-.02em; text-wrap:balance; margin:0 0 1.2rem;
+}
+.standfirst{
+  font-size:1.15rem; color:var(--muted); max-width:56ch; margin:0 0 1.8rem;
+  text-wrap:pretty;
+}
+.stamp{
+  font-family:"IBM Plex Mono",monospace; font-size:.75rem; color:var(--muted);
+  display:flex; gap:1.5rem; flex-wrap:wrap;
+}
+.stamp b{font-weight:500; color:var(--ink)}
+
+/* ---------- documents ---------- */
+.doc{padding-top:4rem}
+.doc-head{
+  font-family:"IBM Plex Mono",monospace; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.12em; color:var(--accent);
+  padding-bottom:.9rem; margin-bottom:2rem; border-bottom:2px solid var(--accent);
+}
+h2{
+  font-family:"Newsreader",Georgia,serif;
+  font-size:2rem; font-weight:400; line-height:1.15; letter-spacing:-.015em;
+  text-wrap:balance; margin:0 0 1rem;
+}
+h3{
+  font-size:1.02rem; font-weight:600; line-height:1.4;
+  margin:2.6rem 0 .7rem; display:flex; gap:.7rem; align-items:baseline;
+}
+h3 .num{
+  font-family:"IBM Plex Mono",monospace; font-size:.78rem; font-weight:400;
+  color:var(--accent); flex:none;
+}
+h4{font-size:.95rem; font-weight:600; margin:1.6rem 0 .4rem}
+p{margin:0 0 1rem; text-wrap:pretty}
+a{color:var(--accent)}
+a:focus-visible,.bar nav a:focus-visible,.toc a:focus-visible{
+  outline:2px solid var(--accent); outline-offset:3px; border-radius:2px;
+}
+ul{margin:0 0 1rem; padding-left:1.1rem}
+li{margin-bottom:.5rem}
+li::marker{color:var(--accent)}
+strong{font-weight:600}
+
+/* ---------- plain-english panel ---------- */
+.plain{
+  background:var(--surface); border:1px solid var(--rule);
+  border-radius:3px; padding:1.8rem 1.8rem 1.4rem; margin:2.5rem 0;
+  box-shadow:var(--shadow);
+}
+.plain-label{
+  font-family:"IBM Plex Mono",monospace; font-size:.68rem;
+  text-transform:uppercase; letter-spacing:.11em; color:var(--muted);
+  margin:0 0 1.1rem;
+}
+.plain ul{list-style:none; padding:0; margin:0}
+.plain li{
+  padding-left:1.6rem; position:relative; margin-bottom:.85rem;
+  font-size:.97rem;
+}
+.plain li::before{
+  content:"—"; position:absolute; left:0; color:var(--accent);
+  font-family:"IBM Plex Mono",monospace;
+}
+
+/* ---------- callout ---------- */
+.note{
+  border-left:2px solid var(--accent); background:var(--accent-soft);
+  padding:1.1rem 1.3rem; margin:1.6rem 0; font-size:.95rem;
+}
+.note p:last-child{margin-bottom:0}
+
+/* ---------- fill-in placeholder ---------- */
+.fill{
+  background:var(--fill-bg); color:var(--fill-ink);
+  font-family:"IBM Plex Mono",monospace; font-size:.82em; font-weight:500;
+  padding:.1em .4em; border-radius:2px; white-space:nowrap;
+}
+
+/* ---------- table ---------- */
+.tablewrap{overflow-x:auto; margin:1.4rem 0}
+table{border-collapse:collapse; width:100%; font-size:.9rem; min-width:32rem}
+th,td{text-align:left; padding:.7rem .9rem; border-bottom:1px solid var(--rule); vertical-align:top}
+th{
+  font-family:"IBM Plex Mono",monospace; font-size:.68rem; font-weight:500;
+  text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  border-bottom:1px solid var(--ink);
+}
+
+/* ---------- footer ---------- */
+footer{
+  margin-top:5rem; padding-top:2rem; border-top:1px solid var(--rule);
+  font-family:"IBM Plex Mono",monospace; font-size:.75rem; color:var(--muted);
+  line-height:1.9;
+}
+footer a{color:var(--muted)}
+footer a:hover{color:var(--accent)}
+</style>
+
+<div class="bar">
+  <div class="bar-in">
+    <div class="wordmark">Situation<span>Sheep</span></div>
+    <nav>
+      <a href="#privacy">Privacy</a>
+      <a href="#health">Health data</a>
+      <a href="#terms">Terms</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</div>
+
+<div class="wrap">
+<div class="cols">
+
+  <aside class="toc">
+    <p>On this page</p>
+    <a href="#privacy">Privacy Policy</a>
+    <a href="#p1">1 · Who we are</a>
+    <a href="#p2">2 · What we hold</a>
+    <a href="#p3">3 · Photos</a>
+    <a href="#p4">4 · Why we may hold it</a>
+    <a href="#p5">5 · What we never do</a>
+    <a href="#p6">6 · People you write about</a>
+    <a href="#p7">7 · Who else sees it</a>
+    <a href="#p8">8 · Where it is kept</a>
+    <a href="#p9">9 · How long</a>
+    <a href="#p10">10 · Security</a>
+    <a href="#p11">11 · Your rights</a>
+    <a href="#p12">12 · Adults only</a>
+    <a href="#p13">13 · Changes</a>
+    <a href="#health">Consumer Health Data</a>
+    <a href="#terms">Terms of Use</a>
+    <a href="#contact">Contact</a>
+  </aside>
+
+  <main>
+
+  <div class="masthead">
+    <p class="eyebrow">SituationSheep</p>
+    <h1>Privacy Policy &amp; Terms of Use</h1>
+    <p class="standfirst">SituationSheep is a private diary of your romantic and sexual life. That is about as personal as data gets, so this page says plainly what happens to it — no shortcuts, no hedging.</p>
+    <div class="stamp">
+      <span>Last updated <b>27 August 2026</b></span>
+      <span>Version <b>privacy-2026-08-21</b></span>
+    </div>
+  </div>
+
+  <!-- ============ PRIVACY ============ -->
+  <section class="doc" id="privacy">
+    <div class="doc-head">Document 1 of 3 — Privacy Policy</div>
+
+    <div class="plain">
+      <p class="plain-label">The short version</p>
+      <ul>
+        <li><strong>Your entries are stored on our servers</strong>, encrypted in transit and on disk, and locked to your account so no other user can reach them. We won't tell you they never leave your phone — they do, so you can get them back when you lose it.</li>
+        <li><strong>A very small number of our engineers can technically reach the database.</strong> Access is restricted, logged, and used only to fix faults — never to read your diary. We'd rather say this plainly than pretend it isn't true.</li>
+        <li><strong>We don't sell anything and we don't run ads.</strong> No ad networks, no data brokers, no advertising trackers. Your entries are never used to train AI models.</li>
+        <li><strong>We take nothing from your phone on our own.</strong> No contacts, no location, no calendar. Only what you type in.</li>
+        <li><strong>Nothing is shared until you switch it on.</strong> Friends is off by default. Even switched on, friends see your numbers — never your names, notes, photos, places or dates.</li>
+        <li><strong>You can use the app with no account at all</strong>, in which case your diary stays on your phone and we never receive it.</li>
+        <li><strong>Delete means delete.</strong> One button in Settings clears your entries from this phone and from our servers.</li>
+      </ul>
+    </div>
+
+    <h3 id="p1"><span class="num">1</span> Who we are</h3>
+    <p>SituationSheep is operated by <span class="fill">[ LEGAL ENTITY NAME ]</span>, <span class="fill">[ REGISTERED ADDRESS ]</span> ("we", "us"). We are the data controller for the information described in this policy.</p>
+    <p>You can reach us at <span class="fill">[ CONTACT EMAIL ]</span>. Our data protection contact is <span class="fill">[ DPO / PRIVACY CONTACT ]</span>. Our representative in the EU under Article 27 GDPR is <span class="fill">[ EU REPRESENTATIVE ]</span>, and in the UK <span class="fill">[ UK REPRESENTATIVE ]</span>.</p>
+
+    <h3 id="p2"><span class="num">2</span> What we hold, and where it comes from</h3>
+    <p>Everything below comes from you. We do not buy information about you, and we do not take anything from your device by ourselves — no contacts, no location, no calendar, no advertising identifiers.</p>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>What</th><th>Specifically</th><th>Where it is kept</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Diary entries</strong></td>
+            <td>A name or nickname, a short note, a region, how you'd describe it, a rating, and a date — for each person you add.</td>
+            <td>Your device and our servers</td>
+          </tr>
+          <tr>
+            <td><strong>Photos</strong></td>
+            <td>Any photo you choose to attach to an entry. Location metadata is stripped before upload.</td>
+            <td>Your device and our servers</td>
+          </tr>
+          <tr>
+            <td><strong>Account</strong></td>
+            <td>Email address, or the identifier from Sign in with Apple or Google. A nickname, if you set one.</td>
+            <td>Our servers</td>
+          </tr>
+          <tr>
+            <td><strong>Counts</strong></td>
+            <td>Totals derived from your entries — partners, situationships, relationships, countries.</td>
+            <td>Our servers</td>
+          </tr>
+          <tr>
+            <td><strong>Consent records</strong></td>
+            <td>What you agreed to, when, and which version of this text. Required to prove consent was validly obtained. Contains nothing from your diary.</td>
+            <td>Our servers</td>
+          </tr>
+          <tr>
+            <td><strong>Crash reports</strong> <em>(only if you switch them on)</em></td>
+            <td>Device model, OS version, and the technical trace of the error. Not one line of your entries.</td>
+            <td>Our servers</td>
+          </tr>
+          <tr>
+            <td><strong>Usage statistics</strong> <em>(only if you switch them on)</em></td>
+            <td>Which screens get opened, so we know what to fix first. No entry content.</td>
+            <td>Our servers</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Your diary entries describe your private life, your relationships and, potentially, your sexual health. The law treats this as a <strong>special category</strong> of personal data (Article 9 GDPR and UK GDPR), as <strong>consumer health data</strong> under Washington's My Health My Data Act, and as <strong>sensitive personal information</strong> under the California Privacy Rights Act. We treat it accordingly.</p>
+    <p>We record the country your app connects from, derived from your connection. <strong>We never store your IP address.</strong></p>
+
+    <h3 id="p3"><span class="num">3</span> Photos</h3>
+    <p>A photo you attach to an entry is uploaded to our servers, in the same way as the rest of that entry, and is stored under your account where no other user can reach it. Before a photo leaves your device we <strong>strip its embedded metadata, including any GPS coordinates</strong>, so the place a photo was taken is not uploaded with it.</p>
+    <div class="note">
+      <p>A face is the detail that makes another person identifiable. Nothing in the app requires a photo, and an entry works perfectly without one. If you would rather we never held a picture of someone, don't attach it.</p>
+    </div>
+
+    <h3 id="p4"><span class="num">4</span> Why we are allowed to hold it</h3>
+    <ul>
+      <li><strong>Your diary entries, including anything about your private life or sexual health</strong> — your <strong>explicit consent</strong> (Article 9(2)(a) GDPR / UK GDPR), which you gave on a separate screen before you started, and which you can withdraw at any time in Settings → Privacy.</li>
+      <li><strong>Your account and the running of the app</strong> — performance of our contract with you (Article 6(1)(b)).</li>
+      <li><strong>Crash reports, usage statistics and marketing emails</strong> — your consent, given per item, each one off by default (Article 6(1)(a)).</li>
+      <li><strong>Consent records and security logs</strong> — our legal obligation to demonstrate that consent was obtained (Article 7(1)), and our legitimate interest in keeping the service secure (Article 6(1)(f)).</li>
+    </ul>
+    <p>Withdrawing consent is exactly as easy as giving it: one tap in Settings, no email to support and no form to fill in. Withdrawal does not undo processing that was lawful before it.</p>
+
+    <h3 id="p5"><span class="num">5</span> What we never do</h3>
+    <ul>
+      <li>We never sell your personal information, and we have not done so in the preceding twelve months.</li>
+      <li>We never share it with advertisers, ad networks, or data brokers. There are no advertising or attribution trackers in this app.</li>
+      <li>We never use your entries to train AI models.</li>
+      <li>We never use your entries for marketing, profiling, or automated decision-making.</li>
+    </ul>
+    <p>If any of that ever changes, we will ask you again on a fresh consent screen. We will not update this page quietly and treat your continued use as agreement.</p>
+
+    <h3 id="p6"><span class="num">6</span> The people you write about</h3>
+    <p>A note about someone is information about another person who never agreed to any of this. Two things follow.</p>
+    <p><strong>What we ask of you.</strong> Keep them unidentifiable. A first name or a nickname is enough. Leave out surnames, phone numbers, profile links, addresses, and anything about their health. Think twice before attaching a photo.</p>
+    <p><strong>What we do.</strong> We hold that information only to show it back to you. We never index it, search it across users, disclose it, or use it for any purpose of our own. We do not notify the people described in your diary, because contacting someone to tell them they appear in another person's private records would cause exactly the harm this policy exists to prevent — a disproportionate effort exemption under Article 14(5)(b) GDPR. If a person believes their information is held here, they can contact us at <span class="fill">[ CONTACT EMAIL ]</span>.</p>
+
+    <h3 id="p7"><span class="num">7</span> Who else sees it</h3>
+    <p><strong>Other users — only if you switch Friends on.</strong> Friends is off by default. If you turn it on, other users can find you by your nickname, and the people you accept can see your counts: partners, situationships, relationships, countries. <strong>They never see names, notes, photos, places or dates.</strong> You can switch it off and remove anyone at any time.</p>
+    <p><strong>Our hosting provider.</strong> Google Cloud Platform / Firebase (Google LLC and Google Ireland Limited) stores and processes the data on our behalf as our processor, under a data processing agreement. They do not use it for their own purposes.</p>
+    <p><strong>Nobody else</strong>, unless we are legally compelled to. If we receive a valid legal demand for your data we will tell you, unless we are legally forbidden from doing so.</p>
+
+    <h3 id="p8"><span class="num">8</span> Where it is kept</h3>
+    <p>Your data is stored on Google Cloud infrastructure in <span class="fill">[ REGION, e.g. europe-west1 ]</span>. Where data is transferred outside the UK or the European Economic Area, that transfer is covered by the European Commission's Standard Contractual Clauses together with the UK International Data Transfer Addendum, plus additional technical measures including encryption in transit and at rest.</p>
+
+    <h3 id="p9"><span class="num">9</span> How long we keep it</h3>
+    <ul>
+      <li><strong>Diary entries, photos and counts</strong> — until you delete them, or until you delete your account, whichever comes first.</li>
+      <li><strong>Account details</strong> — until you delete your account.</li>
+      <li><strong>Deleted data</strong> — removed from live systems immediately and purged from encrypted backups within <span class="fill">[ N ]</span> days.</li>
+      <li><strong>Consent records</strong> — kept for <span class="fill">[ N ]</span> years after account deletion, because we are required to be able to demonstrate that consent was given and withdrawn. These contain nothing from your diary.</li>
+      <li><strong>Crash reports and usage statistics</strong> — <span class="fill">[ N ]</span> days.</li>
+    </ul>
+
+    <h3 id="p10"><span class="num">10</span> How it is protected</h3>
+    <p>Data is encrypted in transit (TLS) and at rest. Access rules on our database restrict every record to the account that owns it, so no user can read another user's entries. Administrative access to production is restricted to a small number of engineers, requires multi-factor authentication, and is logged.</p>
+    <div class="note">
+      <p><strong>What we will not claim.</strong> This app does not use end-to-end encryption. Your entries are stored in a form we could technically read. We don't, our access is restricted and logged, and reading a user's diary would be a firing offence — but we are not going to promise you something the architecture doesn't deliver.</p>
+    </div>
+
+    <h3 id="p11"><span class="num">11</span> Your rights</h3>
+    <p>Three of these are built into the app, in <strong>Settings → Privacy</strong>, and need no permission from us and no contact with support:</p>
+    <ul>
+      <li><strong>Export everything</strong> — your entries in one file, machine-readable JSON and a readable PDF.</li>
+      <li><strong>Withdraw consent</strong> — one tap.</li>
+      <li><strong>Delete account and all data</strong> — permanent, from this phone and from our servers.</li>
+    </ul>
+    <p>Depending on where you live, you also have the right to access your data, correct it, restrict or object to processing, port it elsewhere, and not be discriminated against for exercising any of these. To use a right that isn't a button in the app, write to <span class="fill">[ CONTACT EMAIL ]</span>. We answer within one month.</p>
+    <p><strong>If you are in the UK or the EEA</strong>, you can complain to a supervisory authority — in the UK, the Information Commissioner's Office (<a href="https://ico.org.uk">ico.org.uk</a>); in the EEA, the authority where you live. We would rather you told us first, but you are not required to.</p>
+    <p><strong>If you are in California</strong>, we do not sell or share personal information as those terms are defined by the CPRA, and we have not in the preceding twelve months. We use sensitive personal information only to provide the service you asked for, which means the right to limit its use does not arise. We honour Global Privacy Control signals on our website.</p>
+
+    <h3 id="p12"><span class="num">12</span> Adults only</h3>
+    <p>SituationSheep is for people aged 18 and over. We check this before you start. If someone tells us they are under 18, nothing they entered is saved. If you believe a minor is using the app, contact us at <span class="fill">[ CONTACT EMAIL ]</span> and we will delete the account.</p>
+
+    <h3 id="p13"><span class="num">13</span> When this policy changes</h3>
+    <p>If we change <em>what we do with your data</em> — a new purpose, a new recipient, a new feature that uses your entries — we will show you the consent screen again and ask. Continuing to use the app will never count as agreement to a new use of special-category data.</p>
+    <p>For editorial changes we will show a notice in the app with a plain list of what changed. Every version is stamped at the top of this page.</p>
+  </section>
+
+  <!-- ============ HEALTH ============ -->
+  <section class="doc" id="health">
+    <div class="doc-head">Document 2 of 3 — Consumer Health Data Privacy Policy</div>
+    <h2>Consumer Health Data Privacy Policy</h2>
+    <p>This section applies to residents of <strong>Washington State</strong> under the My Health My Data Act, and to residents of <strong>Nevada</strong> under SB 370. It sits alongside the Privacy Policy above and does not replace it.</p>
+
+    <h3><span class="num">A</span> What consumer health data we collect</h3>
+    <p>Information you enter in your diary that relates to your sexual activity, your relationships, and any health-related detail you choose to record about an encounter — including a rating, a description, a date and a region.</p>
+
+    <h3><span class="num">B</span> Where it comes from</h3>
+    <p>From you, and only from you. We collect no consumer health data from any other source — not from other apps, not from data brokers, not from your device's health services, not by inference.</p>
+
+    <h3><span class="num">C</span> Why we collect it</h3>
+    <p>To run your personal diary and, if you have switched on backup, to sync it across your devices. That is the only purpose. We do not use it for advertising, marketing, profiling, research, or model training.</p>
+
+    <h3><span class="num">D</span> Who we share it with</h3>
+    <p>Google Cloud Platform / Firebase, as our hosting processor, which stores it on our behalf and may not use it for its own purposes. <strong>Nobody else.</strong> We have never sold consumer health data and the app is built so that we cannot: selling it would require your separate signed authorisation, and we do not offer one.</p>
+
+    <h3><span class="num">E</span> Your rights under the My Health My Data Act</h3>
+    <ul>
+      <li><strong>Confirm</strong> whether we hold your consumer health data, and access it — <em>Settings → Privacy → Export everything</em>.</li>
+      <li><strong>Get a list</strong> of every third party we have shared it with — write to <span class="fill">[ CONTACT EMAIL ]</span>.</li>
+      <li><strong>Withdraw consent</strong> to its collection and sharing — <em>Settings → Privacy</em>.</li>
+      <li><strong>Delete it</strong> — <em>Settings → Privacy → Delete account and all data</em>. We will delete it from live systems, backups and any processor within 30 days of your request.</li>
+    </ul>
+    <p>We will not deny you the app, charge you differently, or give you a worse version for exercising any of these. If we refuse a request you may appeal to <span class="fill">[ CONTACT EMAIL ]</span>, and if we deny the appeal you may complain to the Washington State Attorney General at <a href="https://www.atg.wa.gov/file-complaint">atg.wa.gov</a>.</p>
+  </section>
+
+  <!-- ============ TERMS ============ -->
+  <section class="doc" id="terms">
+    <div class="doc-head">Document 3 of 3 — Terms of Use</div>
+    <h2>Terms of Use</h2>
+    <p>This is the contract between you and <span class="fill">[ LEGAL ENTITY NAME ]</span> for your use of SituationSheep. <strong>It gives us no rights over what is in your diary.</strong> By ticking the box in the app, you accept it.</p>
+
+    <h3 id="t1"><span class="num">1</span> Who can use SituationSheep</h3>
+    <p>You must be 18 or over. If you are not, you may not use the app, and we will close any account we learn belongs to a minor.</p>
+
+    <h3 id="t2"><span class="num">2</span> Your account, and using it without one</h3>
+    <p>You can use SituationSheep with an account — email and password, Sign in with Apple, or Sign in with Google — or with no account at all. <strong>Without an account your diary stays on your device</strong>, we never receive it, and there is no sync, no backup and no Friends. If you lose the device, the entries go with it.</p>
+    <p>You are responsible for keeping your login details to yourself. Tell us promptly at <span class="fill">[ CONTACT EMAIL ]</span> if you think someone else has your account.</p>
+
+    <h3 id="t3"><span class="num">3</span> What you write stays yours</h3>
+    <p>Your entries, notes and photos are yours. We claim no ownership of them and no licence to use them beyond what is technically required to store your diary, show it back to you, and sync it between your devices at your request. We will not publish, sell, license, analyse for our own purposes, or use them to train models.</p>
+
+    <h3 id="t4"><span class="num">4</span> What you agree not to do</h3>
+    <ul>
+      <li><strong>Don't record identifying details about other people.</strong> Surnames, phone numbers, addresses, profile links and medical details about someone else do not belong in your diary. A first name or nickname is enough.</li>
+      <li>Don't upload a photo of someone in a context they would not accept, and don't upload sexual images of any person who has not agreed to it. Never upload an image of a minor.</li>
+      <li>Don't use the app to harass, threaten, blackmail, out, or build a dossier on anyone.</li>
+      <li>Don't break the law with it, and don't use it where using it would break the law.</li>
+      <li>Don't attack, reverse-engineer, scrape, or overload the service, and don't try to reach another user's data.</li>
+      <li>Don't impersonate someone else in the nickname directory.</li>
+    </ul>
+    <p>You are responsible for what you record about other people. We are responsible for making sure it doesn't go anywhere.</p>
+
+    <h3 id="t5"><span class="num">5</span> Friends</h3>
+    <p>Friends is off unless you turn it on. Turning it on puts your nickname in a directory other users can search, and lets people you accept see your counts — never your names, notes, photos, places or dates. You can turn it off, and remove any person, at any time.</p>
+
+    <h3 id="t6"><span class="num">6</span> What we promise, and what we don't</h3>
+    <p>We will run the service with reasonable skill and care. We do not promise it will be uninterrupted or error-free, and we may take it down for maintenance. Beyond that, and to the extent the law allows, the app is provided as it is, without warranties.</p>
+    <p><strong>Keep your own copy of anything you can't lose.</strong> Settings → Privacy → Export everything exists for exactly this.</p>
+
+    <h3 id="t7"><span class="num">7</span> Ending it</h3>
+    <p>You can delete your account at any time in Settings → Privacy. That removes your entries from your device and from our servers.</p>
+    <p>We may suspend or close an account that breaches section 4, that is being used to harm another person, or where we are legally required to. Except where the breach is serious or we are legally prevented, we will tell you why and give you a chance to export your data first.</p>
+
+    <h3 id="t8"><span class="num">8</span> Liability</h3>
+    <p>Nothing here limits liability for death or personal injury caused by our negligence, for fraud, or for anything else that cannot legally be limited — including, where it applies, our liability under data protection law. Subject to that, and to the extent permitted by law, we are not liable for indirect or consequential loss, and our total liability to you is limited to the greater of the amount you have paid us in the twelve months before the claim and <span class="fill">[ AMOUNT ]</span>.</p>
+    <p>If you are a consumer, you keep every right your local law gives you, and nothing in these terms takes those away.</p>
+
+    <h3 id="t9"><span class="num">9</span> Changes to these terms</h3>
+    <p>If we change these terms materially we will tell you in the app at least 30 days beforehand, and you can close your account if you don't accept them.</p>
+
+    <h3 id="t10"><span class="num">10</span> Law and disputes</h3>
+    <p>These terms are governed by the law of <span class="fill">[ JURISDICTION ]</span>, and disputes go to the courts of <span class="fill">[ JURISDICTION ]</span>. If you are a consumer resident elsewhere, you may also bring proceedings in your own country, and you keep the protection of its mandatory consumer law.</p>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="doc" id="contact">
+    <div class="doc-head">Contact</div>
+    <h2>Getting hold of us</h2>
+    <p>Privacy questions, rights requests, appeals, and anything about a person who appears in someone's diary: <span class="fill">[ CONTACT EMAIL ]</span>.</p>
+    <p>Postal address: <span class="fill">[ REGISTERED ADDRESS ]</span>.</p>
+    <p>We answer privacy requests within one month, and health-data deletion requests within 30 days.</p>
+  </section>
+
+  <footer>
+    <p>SituationSheep · Privacy Policy, Consumer Health Data Privacy Policy and Terms of Use · Version privacy-2026-08-21 · Last updated 27 August 2026</p>
+    <p><a href="#privacy">Privacy</a> · <a href="#health">Health data</a> · <a href="#terms">Terms</a> · <a href="#contact">Contact</a></p>
+  </footer>
+
+  </main>
+</div>
+</div>
