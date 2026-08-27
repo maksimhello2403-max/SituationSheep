@@ -1,3 +1,10 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Privacy Policy, Consumer Health Data Privacy Policy and Terms of Use for the SituationSheep app.">
+<meta name="robots" content="index, follow">
 <title>SituationSheep Privacy &amp; Terms</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,6 +51,8 @@
 }
 
 *{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0}
 
 body{
   background:var(--paper);
@@ -82,7 +91,8 @@ body{
 
 /* ---------- layout ---------- */
 .wrap{max-width:1080px; margin:0 auto; padding:0 1.5rem 6rem}
-.cols{display:grid; grid-template-columns:1fr; gap:3rem}
+main{min-width:0; max-width:68ch; width:100%; justify-self:center}
+.cols{display:grid; grid-template-columns:minmax(0,1fr); gap:3rem}
 @media (min-width:1000px){
   .cols{grid-template-columns:200px minmax(0,68ch); gap:4rem; justify-content:center}
   .toc{position:sticky; top:5rem; align-self:start}
@@ -95,6 +105,9 @@ body{
 .toc a{display:block; color:var(--muted); text-decoration:none}
 .toc a:hover{color:var(--accent)}
 @media (max-width:999px){.toc{display:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+html{scroll-behavior:smooth; scroll-padding-top:4.5rem}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
 /* ---------- masthead ---------- */
 .masthead{padding:4rem 0 2.5rem; border-bottom:1px solid var(--rule)}
@@ -203,7 +216,8 @@ footer{
 footer a{color:var(--muted)}
 footer a:hover{color:var(--accent)}
 </style>
-
+</head>
+<body>
 <div class="bar">
   <div class="bar-in">
     <div class="wordmark">Situation<span>Sheep</span></div>
@@ -487,3 +501,5 @@ footer a:hover{color:var(--accent)}
   </main>
 </div>
 </div>
+</body>
+</html>
